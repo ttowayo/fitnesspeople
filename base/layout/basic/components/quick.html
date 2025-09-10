@@ -1,0 +1,50 @@
+<!--퀵 탑-->
+<style>
+  .quick_btn {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 50px;
+    right: 50px;
+    z-index: 9999;
+
+    cursor: pointer;
+    font-size: 150px;
+    transform: rotate(0deg);
+
+    transform-origin: center center;
+  }
+  .quick_btn img {
+    display: block;
+    width: 100%;
+  }
+</style>
+<div class="quick_btn">
+  <img src="/web/images/ccds/topImg2.png" alt="go to top" />
+</div>
+<script>
+  jQuery1_11_2(function () {
+    $(".quick_btn").click(function () {
+      $("html, body").stop().animate(
+        {
+          scrollTop: 0,
+        },
+        300,
+        "linear"
+      );
+      $(this).css({
+        transition: "transform 0.3s linear",
+        transform: "rotate(" + 0 + "deg)",
+      });
+    });
+    /* $(window).scroll(function () {
+      var rotation =
+        ($(window).scrollTop() / ($(document).height() - $(window).height())) *
+        360;
+      $(".quick_btn").css({
+        transition: "transform 0.3s linear",
+        transform: "rotate(" + rotation + "deg)",
+      });
+    });*/
+  });
+</script>

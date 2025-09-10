@@ -1,0 +1,11 @@
+<div>
+<img src="file:///C|/Users/MyPC/Desktop/ex.jpg" alt="" border="0" usemap="#Map" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="13,97,267,148" href="/pages/newcenter_01.html" />
+<area shape="rect" coords="270,98,523,146" href="/board/gallery/list_02.html?board_no=20&category_no=1" />
+<area shape="rect" coords="525,99,778,148" href="/pages/newcenter_gx01.html" />
+<area shape="rect" coords="506,182,594,217" href="/board/gallery/list_02.html?board_no=20&category_no=3" />
+<area shape="rect" coords="596,182,684,217" href="/board/gallery/list_02.html?board_no=20&category_no=1" />
+<area shape="rect" coords="685,182,775,217" href="/board/gallery/list_02.html?board_no=20&category_no=2" />
+</map>
+</div>

@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--@import(/layout/basic/components/meta.html)-->
+  <body>
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+
+    <!--@import(/layout/basic/components/header.html)-->
+    <hr class="layout" />
+
+    <div id="wrap">
+      <div id="container">
+        <div id="contents">
+          <style>
+            .apply {
+              margin-top: 40px;
+            }
+            .apply .sizeL {
+              background-color: #f0468c;
+              border-radius: 10px;
+            }
+            .apply [class^="btn"][class*="Fix"].sizeL {
+              width: 400px;
+            }
+            .apply .sizeL:hover {
+              background-color: #f0468c;
+              font-size: 16px;
+            }
+            .apply [class^="btnSubmit"],
+            a[class^="btnSubmit"] {
+              font-family: "NotoSansKR";
+              font-size: 16px;
+            }
+            .apply-table.ec-base-table tbody th {
+              background-color: #fff;
+            }
+            .apply-title {
+              font-size: 20px;
+              font-weight: bold;
+              color: #f0468c;
+            }
+            .apply-info {
+              font-size: 14px;
+              font-weight: bold;
+              margin-top: 6px;
+            }
+            textarea#content {
+              height: 18px;
+              padding: 2px 4px;
+            }
+            .branchListTd {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+            .branchListTd textarea#content {
+              width: 0;
+              height: 0;
+              resize: none;
+              position: fixed;
+              top: -9999px;
+              z-index: -1;
+            }
+            .branchListTd .branchOfficeOptionResult {
+              color: #f0468c;
+            }
+            .branchListBox {
+              width: 200px;
+              height: 20px;
+              border: 1px solid #d5d5d5;
+              font-size: 14px;
+              padding: 2px 4px;
+              background: #fff;
+              position: relative;
+              cursor: pointer;
+            }
+            .branchListBox #branchList {
+              width: 100%;
+              position: absolute;
+              top: 24px;
+              left: -1px;
+              border: 1px solid #d5d5d5;
+              background-color: #fff;
+              display: none;
+              height: 200px;
+
+              overflow: auto;
+            }
+            .branchListBox:hover #branchList {
+              display: block;
+            }
+            .branchListBox #branchList > li {
+              padding: 2px 4px;
+            }
+            .branchListBox #branchList > li:hover {
+              background-color: #f5f5f5;
+            }
+            .branchListBox .angle-down-btn {
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              background-color: transparent;
+              right: 2px;
+              top: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          </style>
+          <div class="path">
+            <span>현재 위치</span>
+            <ol>
+              <li><a href="/">홈</a></li>
+              <li title="현재 위치">
+                <strong>지원하기</strong>
+              </li>
+            </ol>
+          </div>
+          <div module="Mall_Urgencycall">
+            <!--@css(/css/module/board/urgencycall.css)-->
+            <!--
+        $login_page = /member/login.html
+    -->
+            <div style="padding: 20px 0">
+              <h2 class="apply-title">{$ucc_title}</h2>
+              <p class="apply-info">{$ucc_info}</p>
+            </div>
+
+            <p class="required">
+              <img
+                src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                width="5"
+                height="5"
+                alt="필수"
+              />
+              필수입력사항
+            </p>
+            <div class="ec-base-table typeWrite" class="apply-table">
+              <table border="1" summary="">
+                <caption>
+                  지원하기
+                </caption>
+                <colgroup>
+                  <col style="width: 150px" />
+                  <col style="width: auto" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      지원분야
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td>{$form.question}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      지원경로
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td>
+                      <div>
+                        휘트니스피플 우먼 채용 공고를 어떻게 알고 지원해
+                        주셨나요?
+                      </div>
+                      <div class="supportPath">{$form.title}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <!-- <th scope="row">{$sPrdOrdText}</th>
+                    <td>
+                      {$form.prd_ord}&nbsp;&nbsp;
+                      <a
+                        href="#none"
+                        id="opensearch"
+                        class="btnEm"
+                        name="opensearch"
+                        onClick="{$Open_SearchLayer}"
+                        >검색</a
+                      >
+                      {$form.hiddenPrdOrd}
+                    </td> -->
+                  </tr>
+                  <tr>
+                    <!-- <th scope="row">답변수신방식</th>
+                    <td>{$form.chk_reply_type}</td> -->
+                  </tr>
+
+                  <tr>
+                    <th scope="row">
+                      성함
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td class="applyWriter">{$form.writer}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      연락처
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td class="applyMobile">{$form.mobile}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      이메일
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td class="applyEmail">{$form.email}</td>
+                  </tr>
+                  <tr class="{$info_change_display|display}">
+                    <!-- <th scope="row">정보수정동의</th>
+                    <td>{$form.chk_info_change}</td> -->
+                  </tr>
+
+                  <tr>
+                    <th scope="row">
+                      희망지점
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td class="branchListTd">
+                      {$form.content}
+                      <div class="branchListBox">
+                        <span>지점 선택</span>
+                        <span class="angle-down-btn"
+                          ><i class="xi-mouse-pointer"></i
+                        ></span>
+                        <ul id="branchList"></ul>
+                      </div>
+                      <span class="branchOfficeOptionResult"></span>
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="{$file_attatch_display|display}">
+                  <tr>
+                    <th scope="row">
+                      이력서 및<br />자기 소개서 제출
+                      <img
+                        src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
+                        width="5"
+                        height="5"
+                        alt="필수"
+                      />
+                    </th>
+                    <td>
+                      <div style="padding: 10px 0" class="applicationFile_1">
+                        {$form.attach_file}
+                      </div>
+                      <div>{$form.attach_file}</div>
+                      <div style="padding: 10px 0">
+                        <span>1. 사진 첨부 필수</span><br />
+                        <span>2. 상세 내용 기재 (허위 기재 시 입사 취소)</span
+                        ><br />
+                        <span
+                          >3. 이력서 및 자기소개서 파일을 하나로 합쳐서 지원해
+                          주세요</span
+                        ><br />
+                        <span
+                          >4. 파일은 각각 10MB 를 넘을 수 없습니다. 파일을
+                          압축하여 전송 해주세요.</span
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- <tr>
+                    <th scope="row">첨부파일2</th>
+                    <td>{$form.attach_file}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">첨부파일3</th>
+                    <td>{$form.attach_file}</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">첨부파일5</th>
+                    <td>{$form.attach_file}</td>
+                  </tr> -->
+                </tbody>
+
+                <tbody class="captcha {$config.use_captcha_write|display}">
+                  <tr>
+                    <th scope="row">보안문자</th>
+                    <td>
+                      {$captcha_image} {$captcha_refresh}
+                      <p class="gBlank5">
+                        {$form.captcha}
+                        <span class="ec-base-help txtInfo">
+                          영문, 숫자 조합을 공백없이
+                          입력하세요(대소문자구분)</span
+                        >
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="{$privacy_agreement_display|display}">
+                  <tr>
+                    <th scope="row">
+                      개인정보 수집 및 <br />이용 동의<span>(보기)</span>
+                    </th>
+                    <td>
+                      {$form.privacy_agreement}
+                      <p class="gBlank5">{$form.privacy_agreement_radio}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ec-base-button gBlank10 apply">
+              <a
+                href="#none"
+                class="btnSubmitFix sizeL"
+                onclick="if(validate()){$action_send}"
+                >제출하기</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--@import(/layout/basic/components/quick.html)-->
+    <!--@import(/layout/basic/components/footer.html)-->
+    <script>
+      jQuery1_11_2(function () {
+        $("input.inputTypeText[fw-label='email']").attr(
+          "placeholder",
+          "이메일"
+        );
+        $("input.inputTypeText[fw-label='writer']").attr("placeholder", "성함");
+        $("input.inputTypeText[fw-label='mobile']").attr(
+          "placeholder",
+          "연락처"
+        );
+        $("input.inputTypeText[fw-label='title']").attr(
+          "placeholder",
+          "ex)스포드림/잡코리아/호호요가/인스타그램/지인소개/기타등등"
+        );
+        $("textarea#content").attr("placeholder", "희망지점");
+      });
+      //자바스크립트
+      const createBranchList = async () => {
+        let selectOptionName = "";
+        const fetchBranchList = await fetch("/json/branchOffice.json");
+        const response = await fetchBranchList.json();
+        const branchOfficeData = response?.branch_office;
+        const compareData = branchOfficeData.sort((a, b) =>
+          a.office_name.localeCompare(b.office_name, "ko")
+        );
+        console.log(compareData);
+        document.querySelector("#branchList").innerHTML = compareData
+          .map(
+            (obj) =>
+              `<li class="branchOfficeOption"><span>${obj.office_name}</span></li>`
+          )
+          .join("");
+        document
+          .querySelector("#branchList")
+          .addEventListener("click", function (e) {
+            const clickLi = e.target.closest(".branchOfficeOption");
+            if (!clickLi) return;
+
+            selectOptionName = clickLi.querySelector("span").textContent;
+
+            document.querySelector(
+              ".branchOfficeOptionResult"
+            ).innerHTML = `${selectOptionName}이 선택되었습니다.`;
+
+            const branchListTd = document.querySelector(".branchListTd");
+            const branchListTextArea = (branchListTd.querySelector(
+              "textarea#content"
+            ).value = `${selectOptionName}을 희망합니다.`);
+          });
+        document.querySelector(".branchOfficeOptionResult").innerHTML =
+          selectOptionName;
+      };
+      createBranchList();
+      function validate() {
+        try {
+          //지원경로
+          const supportPath = document.querySelector(".supportPath");
+          const supportPathValue =
+            supportPath.querySelector("input#title").value;
+          const branchListTd = document.querySelector(".branchListTd");
+          const branchListTextAreaValue =
+            branchListTd.querySelector("textarea#content").value;
+          const applicationFile_1 =
+            document.querySelector(".applicationFile_1");
+          const applicationFileValue_1 =
+            applicationFile_1.querySelector("input#attach_file").value;
+          const applyMobile = document.querySelector(".applyMobile");
+          const applyMobileValue =
+            applyMobile.querySelector("input#mobile").value;
+          const applyEmail = document.querySelector(".applyEmail");
+          const applyEmailValue = applyEmail.querySelector("input#email").value;
+          if (
+            supportPathValue === "" ||
+            supportPathValue === null ||
+            supportPathValue === undefined
+          ) {
+            alert("지원경로를 정확히 작성하여주세요");
+            supportPath.querySelector("input#title").focus();
+            return false;
+          } else if (
+            branchListTextAreaValue === "" ||
+            branchListTextAreaValue === null ||
+            branchListTextAreaValue === undefined
+          ) {
+            alert("희망지점을 선택하지 않았습니다.");
+            branchListTd.querySelector("textarea#content").focus();
+            return false;
+          } else if (
+            applicationFileValue_1 === "" ||
+            applicationFileValue_1 === null ||
+            applicationFileValue_1 === undefined
+          ) {
+            alert(
+              "첫번째 파일선택이 제대로 이루어지지 않았습니다.\n반드시 파일을 첨부하여주세요."
+            );
+            applicationFile_1.querySelector("input#attach_file").focus();
+            return false;
+          } else if (
+            applyMobileValue === "" ||
+            applyMobileValue === null ||
+            applyMobileValue === undefined
+          ) {
+            alert("연락처가 입력되지 않았습니다.");
+            applyMobile.querySelector("input#mobile").focus();
+            return false;
+          } else if (
+            applyEmailValue === "" ||
+            applyEmailValue === null ||
+            applyEmailValue === undefined
+          ) {
+            alert("이메일이 입력되지 않았습니다.");
+            applyMobile.querySelector("input#email").focus();
+            return false;
+          } else {
+            return true;
+          }
+        } catch (e) {
+          console.error(e, "에러이유");
+        }
+      }
+    </script>
+    <!-- 결제를 위한 필수 영역 -->
+    <div id="progressPaybar" style="display: none">
+      <div id="progressPaybarBackground" class="layerProgress"></div>
+      <div id="progressPaybarView">
+        <div class="box">
+          <p class="graph">
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif"
+                alt="현재 결제가 진행중입니다."
+            /></span>
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif"
+                alt=""
+            /></span>
+          </p>
+          <p class="txt">
+            본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을
+            닫으시면<br />
+            주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- // 결제를 위한 필수 영역 -->
+
+    <div module="Layout_multishopShipping">
+      <!--@css(/layout/basic/css/ec-base-layer.css)-->
+      <!--@css(/css/module/layout/multishopShipping.css)-->
+      <!--@js(/js/module/layout/multishopShipping.js)-->
+      <div class="dimmed"></div>
+      <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+          <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+          <p class="desc">
+            PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :
+          </p>
+          <div class="select">
+            <select module="Layout_multishopShippingCountrylist">
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+            </select>
+          </div>
+          <div class="select">
+            <select module="Layout_multishopShippingLanguagelist">
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none"
+            ><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/link/btn_go.gif"
+              alt="GO"
+          /></a>
+        </div>
+        <a href="#none" class="close"
+          ><img
+            src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
+            width="13"
+            height="13"
+            alt="close"
+        /></a>
+      </div>
+    </div>
+
+    <div module="Layout_conversionPc">
+      <!--@css(/css/module/layout/conversionpc.css)-->
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+    <!-- Smartlog -->
+    <script type="text/javascript">
+      var hpt_info = { _account: "UHPT-26871", _server: "a27" };
+    </script>
+    <script
+      language="javascript"
+      src="//cdn.smlog.co.kr/core/smart.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

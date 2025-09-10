@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--@import(/layout/basic/components/meta.html)-->
+  <body>
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+
+    <!--@import(/layout/basic/components/header.html)-->
+    <style>
+      .pageTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        
+        color: #f0468c;
+      }
+      .board-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 150px;
+      }
+      .board-list-wrap {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+      }
+      .board-list-wrap > li > a {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      .content-box img {
+        width:100%;
+      }
+    </style>
+    <div class="pageTitle">
+      <h2>partnership</h2>
+    </div>
+
+    <div class="board-top">
+      <h2></h2>
+      <ul class="board-list-wrap">
+        <li class="board-list" data-cate="thebodyfit">
+          <a href="/page/benefit/thebodyfit.html?thebodyfit">thebodyfit</a>
+        </li>
+        <li class="board-list" data-cate="partnership">
+          <a href="/page/benefit/partnership.html?partnership">partnership</a>
+        </li>
+      </ul>
+    </div>
+    <div id="wrap">
+      <div id="container">
+        <div id="contents">
+          <div class="content-box">
+            <img src="/web/images/sub/thebody1.png" alt="브랜드 이미지" /><img src="/web/images/sub/thebody2.png" alt="브랜드 이미지" /><img src="/web/images/sub/thebody3.png" alt="브랜드 이미지" /><img src="/web/images/sub/thebody4.png" alt="브랜드 이미지" /><a href="https://thebodyfit.co.kr/"><img src="/web/images/sub/thebody5.png" alt="브랜드 이미지" /><a href="https://www.instagram.com/thebodyfit_pilates/"><img src="/web/images/sub/thebody6.png" alt="브랜드 이미지" />
+          </div>
+          <!--@contents-->
+        </div>
+      </div>
+    </div>
+
+    <!--@import(/layout/basic/components/quick.html)-->
+    <!--@import(/layout/basic/components/footer.html)-->
+
+    <!-- 결제를 위한 필수 영역 -->
+    <div id="progressPaybar" style="display: none">
+      <div id="progressPaybarBackground" class="layerProgress"></div>
+      <div id="progressPaybarView">
+        <div class="box">
+          <p class="graph">
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif"
+                alt="현재 결제가 진행중입니다."
+            /></span>
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif"
+                alt=""
+            /></span>
+          </p>
+          <p class="txt">
+            본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을
+            닫으시면<br />
+            주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- // 결제를 위한 필수 영역 -->
+
+    <div module="Layout_multishopShipping">
+      <!--@css(/layout/basic/css/ec-base-layer.css)-->
+      <!--@css(/css/module/layout/multishopShipping.css)-->
+      <!--@js(/js/module/layout/multishopShipping.js)-->
+      <div class="dimmed"></div>
+      <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+          <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+          <p class="desc">
+            PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :
+          </p>
+          <div class="select">
+            <select module="Layout_multishopShippingCountrylist">
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+            </select>
+          </div>
+          <div class="select">
+            <select module="Layout_multishopShippingLanguagelist">
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none"
+            ><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/link/btn_go.gif"
+              alt="GO"
+          /></a>
+        </div>
+        <a href="#none" class="close"
+          ><img
+            src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
+            width="13"
+            height="13"
+            alt="close"
+        /></a>
+      </div>
+    </div>
+
+    <div module="Layout_conversionPc">
+      <!--@css(/css/module/layout/conversionpc.css)-->
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+    <!--@js(/page/benefit/benefit.js)-->
+  <!-- Smartlog -->
+    <script type="text/javascript">
+        var hpt_info={'_account':'UHPT-26871', '_server': 'a27'};
+    </script>
+    <script language="javascript" src="//cdn.smlog.co.kr/core/smart.js" charset="utf-8"></script>
+          </body>
+</html>

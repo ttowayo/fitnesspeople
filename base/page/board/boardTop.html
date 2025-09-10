@@ -1,0 +1,102 @@
+<style>
+  .board-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+  }
+  .board-list-wrap {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .board-list-wrap > li > a {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+<div class="board-top">
+  <h2></h2>
+  <ul class="board-list-wrap bl-1">
+    <li class="board-list" data-cate="무료체험권-신청">
+      <a href="/board/무료체험권-신청/1002/">무료체험권</a>
+    </li>
+    <li class="board-list" data-cate="공지사항">
+      <a href="/board/공지사항/1/">공지사항</a>
+    </li>
+    <li class="board-list" data-cate="진행중인-이벤트">
+      <a href="/board/진행중인-이벤트/40/">이벤트</a>
+    </li>
+  </ul>
+  <ul class="board-list-wrap bl-2">
+    <li class="board-list" data-cate="리얼-스토리">
+      <a href="/board/리얼-스토리/8/">realstory</a>
+    </li>
+    <li class="board-list" data-cate="before-after">
+      <a href="/board/before-after/14/">interview</a>
+    </li>
+  </ul>
+  <ul class="board-list-wrap bl-3">
+    <li class="board-list" data-cate="FPA">
+      <a href="/page/academy/academy.html?FPA">FPA</a>
+    </li>
+    <li class="board-list" data-cate="교육-일정">
+      <a href="/board/교육-일정/41/">schedule</a>
+    </li>
+  </ul>
+</div>
+<script>
+  jQuery1_11_2(function () {
+    /*이곳은 건들지 마세요 Start*/
+    const locations = location.href;
+    const locationSplit = locations.split("/");
+    const encodedString = locationSplit[4];
+    const decodedString = decodeURIComponent(encodedString);
+    //alert(decodedString)
+    /*메뉴 컬러 분기*/
+
+    const elementsWithDataName = document.querySelectorAll(
+      ".board-list[data-cate]"
+    );
+    $(".board-list[data-cate]").each(function () {
+      if ($(this).data("cate") === decodedString) {
+        // CSS를 변경하고 싶은 경우 여기에서 요소에 스타일을 추가하거나 클래스를 변경할 수 있습니다.
+        $(this).find("a").css("color", "#f0468c"); // 예시로 글자색을 빨간색으로 변경합니다.
+      }
+    });
+    /*board 타이틀은 일음이 달라 연동이 안되는 관계로 강제로 적용시킵니다*/
+    if (decodedString === "진행중인-이벤트") {
+      $(".board-top").find(">h2").text("이벤트").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-1").css("display", "flex");
+    }
+    if (decodedString === "공지사항") {
+      $(".board-top").find(">h2").text("notice").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-1").css("display", "flex");
+    }
+    if (decodedString === "무료체험권-신청") {
+      $(".board-top").find(">h2").text("무료체험권").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-1").css("display", "flex");
+    }
+    if (decodedString === "리얼-스토리") {
+      $(".board-top").find(">h2").text("realstory").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-2").css("display", "flex");
+    }
+    if (decodedString === "before-after") {
+      $(".board-top").find(">h2").text("interview").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-2").css("display", "flex");
+    }
+    if (decodedString === "교육-일정") {
+      $(".board-top").find(">h2").text("schedule").css("color", "#f0468c");
+      $(".board-list-wrap").hide();
+      $(".bl-3").css("display", "flex");
+    }
+  });
+</script>

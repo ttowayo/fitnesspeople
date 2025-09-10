@@ -1,0 +1,494 @@
+<!--@layout(/layout/basic/layout.html)-->
+<style>
+  .menu-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  .menu-wrap > h2 {
+    font-size: 20px;
+    color: #f0468c;
+    margin-bottom: 40px;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 800px;
+  }
+  .menu-list {
+    padding: 10px;
+  }
+  .menu-list > a {
+    font-size: 14px;
+  }
+  /*센터 소개*/
+  .center-intro {
+    width: 100%;
+    margin-top: 110px;
+  }
+  .center-intro .center-name {
+    width: 100%;
+    display: none;
+  }
+  .center-trainers {
+    display: none;
+  }
+  .top-title {
+    width: 100%;
+    height: 500px;
+    background: url("/web/images/ccds/center/center_bg5.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-title .intro-box {
+    width: 80%;
+    height: 340px;
+    background-color: #fff;
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .ib-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ib-top h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .ib-top-text {
+    font-size: 14px;
+  }
+  .ib-mid {
+    margin-top: 90px;
+  }
+  .ib-mid h4 {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .ib-mid table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .ib-mid th {
+    padding: 5px 15px;
+    text-align: left;
+  }
+  .ib-mid td {
+    padding: 5px 15px;
+    text-align: right;
+  }
+  .ib-bottom {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto; /* 세 개의 칼럼으로 나누기 */
+    gap: 10px; /* 칼럼 사이의 간격 */
+    padding: 10px; /* 컨테이너 패딩 */
+  }
+  .ib-bottom .grid-item {
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    padding: 10px 0; /* 그리드 아이템 패딩 */
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  /*이미지 */
+  .staff-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+  .staff-intro .si-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 34px;
+  }
+  .si-top h3 {
+    font-size: 24px;
+  }
+  .si-top button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #fff;
+  }
+  .staff-intro .container {
+    width: 1240px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .staff-intro .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .staff-intro .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .staff-intro .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .staff-intro .board_15_txt {
+    padding: 0px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+  }
+  .staff-intro .board_15_txt > span > span {
+    font-size: 16px !important;
+  }
+  /*이미지 */
+  .place-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+  .place-intro .si-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 34px;
+  }
+  .place-intro h3 {
+    font-size: 24px;
+  }
+
+  .place-intro .container {
+    width: 1240px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .place-intro .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .place-intro .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .place-intro .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .place-intro .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 30px !important;
+  }
+  .place-intro .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .place-intro .swiper-pagination-bullet-active {
+    background-color: #f0468c;
+  }
+  .place-intro .swiper-button-next,
+  .swiper-button-prev {
+    width: 34px;
+    height: 34px;
+
+    color: #fff;
+    background-color: #f0468c;
+  }
+  .place-intro .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 24px !important;
+  }
+</style>
+<div class="menu-wrap">
+  <h2>center</h2>
+  <ul class="menu" module="Layout_category">
+    <!--@js(/js/module/layout/category.js)-->
+    <li class="menu-list">
+      <a href="/page/location.html">all view</a>
+    </li>
+    <li class="menu-list" data-name="{$name_or_img_tag}">
+      <a href="{$link_product_list}">{$name_or_img_tag}</a>
+    </li>
+    <li class="menu-list" data-name="{$name_or_img_tag}">
+      <a href="{$link_product_list}">{$name_or_img_tag}</a>
+    </li>
+    <li class="menu-list" data-name="{$name_or_img_tag}">
+      <a href="{$link_product_list}">{$name_or_img_tag}</a>
+    </li>
+  </ul>
+</div>
+<!--이곳부터는 시설소개에 관련된 부분입니다.-->
+<div class="center-intro">
+  <!--이곳에 복사하여 붙여넣으면 됩니다.-->
+  <!--@import(/page/center/center_1.html)-->
+  <!--@import(/page/center/center_2.html)-->
+  <!--@import(/page/center/center_3.html)-->
+  <!--@import(/page/center/center_4.html)-->
+  <!--@import(/page/center/center_5.html)-->
+  <!--@import(/page/center/center_6.html)-->
+  <!--@import(/page/center/center_7.html)-->
+  <!--@import(/page/center/center_8.html)-->
+  <!--@import(/page/center/center_9.html)-->
+  <!--@import(/page/center/center_10.html)-->
+  <!--@import(/page/center/center_11.html)-->
+  <!--@import(/page/center/center_12.html)-->
+  <!--@import(/page/center/center_13.html)-->
+  <!--@import(/page/center/center_14.html)-->
+  <!--@import(/page/center/center_15.html)-->
+  <!--@import(/page/center/center_16.html)-->
+  <!--@import(/page/center/center_17.html)-->
+  <!--@import(/page/center/center_18.html)-->
+  <!--@import(/page/center/center_19.html)-->
+  <!--@import(/page/center/center_20.html)-->
+  <!--@import(/page/center/center_21.html)-->
+  <!--@import(/page/center/center_22.html)-->
+  <!--@import(/page/center/center_23.html)-->
+  <!--@import(/page/center/center_24.html)-->
+  <!--@import(/page/center/center_25.html)-->
+  <!--@import(/page/center/center_26.html)-->
+  <!--@import(/page/center/center_27.html)-->
+  <!--@import(/page/center/center_28.html)-->
+  <!--@import(/page/center/center_29.html)-->
+  <!--@import(/page/center/center_30.html)-->
+  <!--@import(/page/center/center_31.html)--> 
+  <!--@import(/page/center/center_32.html)-->    
+</div>
+
+<!-------------------------------------------------------------------------------
+  이곳부터는 직원소개에 관련된 부분입니다.
+  추천상품에 매니저등급을
+  신상품에는 일반직원을 등록하세요
+  일반 상품은 전체직원이 등록되어야 합니다 :)
+--------------------------------------------------------------------------------->
+<style>
+  .center-trainers {
+    margin-top: 110px;
+  }
+  .trainers-wrap {
+    width: 100%;
+    max-width: 1240px;
+  }
+  .trainers-wrap h3 {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  .manager-trainers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 4열 */
+    gap: 10px; /* 열 사이의 간격 설정 */
+    margin-top: 40px;
+  }
+  .trainers-idx {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .trainers-idx img {
+    width: 100%;
+  }
+  .prd-txt {
+    text-align: left;
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+  .prd-txt span {
+    font-size: 16px !important;
+  }
+</style>
+<div class="center-trainers">
+  <div class="trainers-wrap" module="Product_menupackage">
+    <h3>스탭 소개</h3>
+    <div class="manager-trainers" module="product_listrecommend">
+      <!--
+              $count = 4
+                  ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                  ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+              $basket_result = /product/add_basket.html
+              $basket_option = /product/basket_option.html
+          -->
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+    </div>
+    <!--추천상품(매니져 급)-->
+    <div class="manager-trainers" module="product_listnormal">
+      <!--
+              $count = 50
+                  ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                  ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+              $basket_result = /product/add_basket.html
+              $basket_option = /product/basket_option.html
+          -->
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+    </div>
+    <!--신상품(팀장 및 직원)-->
+    <div class="manager-trainers" module="product_listnew">
+      <!--
+              $count = 50
+                  ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                  ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+              $basket_result = /product/add_basket.html
+              $basket_option = /product/basket_option.html
+          -->
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+      <div
+        id="anchorBoxId_{$product_no}"
+        class="trainers-idx"
+        onclick="javascript:window.location.href='{$link_product_detail}'"
+      >
+        <div class="prd-img">
+          <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+        </div>
+        <div class="prd-txt">{$product_name}</div>
+      </div>
+    </div>
+    <!--전체직원(전체직원은 일반에 있어야 합니다. 시설소개 부분에 전체직원과 연동)-->
+  </div>
+
+  <script>
+    /*센터번호에 따라서 다른 소개가 나타남.*/
+    //
+    jQuery1_11_2(function () {
+      /*이곳은 건들지 마세요 Start*/
+      const locations = location.href;
+      const locationSplit = locations.split("/");
+      const encodedString = locationSplit[4];
+      const decodedString = decodeURIComponent(encodedString);
+
+      /*조건에 따른 분기*/
+      const elementsWithCenterName = document.querySelectorAll(
+        ".center-name[data-center]"
+      );
+      //alert(decodedString);
+      $(".center-name[data-center]").each(function () {
+        if ($(this).data("center") === decodedString) {
+          // CSS를 변경하고 싶은 경우 여기에서 요소에 스타일을 추가하거나 클래스를 변경할 수 있습니다.
+          //alert($(this).data("center"));
+          $(".center-name").hide();
+          $(this).show();
+        }
+      });
+
+      /*메뉴 컬러 분기*/
+
+      const elementsWithDataName = document.querySelectorAll(
+        ".menu-list[data-name]"
+      );
+      $(".menu-list[data-name]").each(function () {
+        if ($(this).data("name") === decodedString) {
+          // CSS를 변경하고 싶은 경우 여기에서 요소에 스타일을 추가하거나 클래스를 변경할 수 있습니다.
+          $(this).find("a").css("color", "#f0468c"); // 예시로 글자색을 빨간색으로 변경합니다.
+        }
+      });
+
+      $(".si-top button").click(function () {
+        $(".center-intro").hide();
+        //alert("a");
+        console.log($(".center-intro .center-name").css("display"));
+        $(".center-trainers").show();
+      });
+
+      /*swiper*/
+
+      var staff_intro_swiper = new Swiper(".staff-intro .mySwiper", {
+        slidesPerView: 4.5,
+        spaceBetween: 20,
+        freeMode: true,
+      });
+
+      var place_intro_swiper = new Swiper(".place-intro .mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    });
+  </script>
+</div>

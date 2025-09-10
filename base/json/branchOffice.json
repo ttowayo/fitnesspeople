@@ -1,0 +1,136 @@
+{
+  "branch_office": [
+    {
+      "no": 1,
+      "office_name": "구의점"
+    },
+    {
+      "no": 2,
+      "office_name": "서울대점"
+    },
+    {
+      "no": 3,
+      "office_name": "홍대점"
+    },
+    {
+      "no": 4,
+      "office_name": "신림점"
+    },
+    {
+      "no": 5,
+      "office_name": "광명점"
+    },
+    {
+      "no": 6,
+      "office_name": "이수점"
+    },
+    {
+      "no": 7,
+      "office_name": "구디점"
+    },
+    {
+      "no": 8,
+      "office_name": "탄현점"
+    },
+    {
+      "no": 9,
+      "office_name": "수유점"
+    },
+    {
+      "no": 10,
+      "office_name": "건대점"
+    },
+    {
+      "no": 11,
+      "office_name": "신중동점"
+    },
+    {
+      "no": 12,
+      "office_name": "길동점"
+    },
+    {
+      "no": 13,
+      "office_name": "부평점"
+    },
+    {
+      "no": 14,
+      "office_name": "화곡점"
+    },
+    {
+      "no": 15,
+      "office_name": "논현점"
+    },
+    {
+      "no": 16,
+      "office_name": "노원점"
+    },
+    {
+      "no": 17,
+      "office_name": "여의도점"
+    },
+    {
+      "no": 18,
+      "office_name": "부천점"
+    },
+    {
+      "no": 19,
+      "office_name": "부천점"
+    },
+    {
+      "no": 20,
+      "office_name": "연신내점"
+    },
+    {
+      "no": 21,
+      "office_name": "상동점"
+    },
+    {
+      "no": 22,
+      "office_name": "성수점"
+    },
+    {
+      "no": 23,
+      "office_name": "망원점"
+    },
+    {
+      "no": 24,
+      "office_name": "철산점"
+    },
+    {
+      "no": 25,
+      "office_name": "군자점"
+    },
+    {
+      "no": 26,
+      "office_name": "당산점"
+    },
+    {
+      "no": 27,
+      "office_name": "응암점"
+    },
+    {
+      "no": 28,
+      "office_name": "안암점"
+    },
+    {
+      "no": 29,
+      "office_name": "상봉점"
+    },
+    {
+      "no": 30,
+      "office_name": "사당점"
+    },
+    {
+      "no": 31,
+      "office_name": "왕십리점"
+    },
+    {
+      "no": 32,
+      "office_name": "서울대벤처타운역점"
+    },
+    {
+      "no": 33,
+      "office_name": "가산디지털단지역점"
+    }
+  ]
+}

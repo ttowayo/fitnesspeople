@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--@import(/layout/basic/components/meta.html)-->
+  <body id="main" class="anotherHeader">
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+    <!--헤더-->
+    <!--@import(/layout/basic/components/header.html)-->
+    <!--메인슬라이더-->
+    <!--@import(/layout/basic/components/main-slider.html)-->
+
+    <style>
+      /*이미지 */
+      #section_1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_1 > h3 {
+        font-size: 34px;
+        font-weight: 900;
+      }
+      #section_1 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_1 > p > a {
+        color: #999;
+      }
+      #section_1 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      #section_1 .img_wrap {
+        display: block;
+        overflow: hidden;
+      }
+      #section_1 .img_wrap img {
+        width: 100%;
+      }
+      #section_1 .img_wrap:hover img {
+        transition: all 1.5s;
+        transform: scale(1.05);
+      }
+      #section_1 .board_8_txt {
+        margin-top: 20px;
+        padding: 0px 5px;
+        box-sizing: border-box;
+      }
+      #section_1 .board_8_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_1" module="Board_ListPackage_8">
+      <h3>real story</h3>
+      <p><a href="/board/리얼-스토리/8/">show more &gt;</a></p>
+      <div class="container" module="board_list_8">
+        <!--
+          $count = 6
+          $login_page_url = /member/login.html
+          $deny_access_url = /index.html
+          -->
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /*이미지 */
+      #section_2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_2 > h3 {
+        font-size: 34px;
+        font-weight: 900;
+      }
+      #section_2 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_2 > p > a {
+        color: #999;
+      }
+      #section_2 .container {
+        width: 1240px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      #section_2 .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      #section_2 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #section_2 .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #section_2 .board_15_txt {
+        padding: 0px 5px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+      }
+      #section_2 .board_15_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_2" module="Board_ListPackage_14">
+      <h3>interview</h3>
+      <p><a href="/board/before-after/14/">show more &gt;</a></p>
+
+      <div class="container" module="board_list_14">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!--
+                $count = 6
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+              -->
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 첫번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 두번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Initialize Swiper -->
+    <script>
+      var section_2_swiper = new Swiper("#section_2 .mySwiper", {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+        freeMode: true,
+      });
+    </script>
+    <style>
+      #section_3 {
+        width: 100%;
+        min-width: 1240px;
+        height: 737px;
+        margin-top: 150px;
+        overflow: hidden;
+      }
+      #section_3 .section_3_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("/web/images/ccds/renew_center_img.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: all 1s;
+      }
+      #section_3:hover .section_3_wrap {
+        transform: scale(1.1);
+      }
+
+      #section_3 .section_3_wrap > * {
+        transition: all 1s;
+      }
+
+      #section_3:hover .section_3_wrap > * {
+        transform: scale(0.909);
+      }
+      #section_3 h3 {
+        font-size: 50px;
+        color: #fff;
+      }
+      .section_3_btn {
+        width: 230px;
+        height: 60px;
+        background-color: #f0468c;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 24px;
+        margin-top: 300px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+    <div id="section_3">
+      <div class="section_3_wrap">
+        <h3>center</h3>
+        <div
+          class="section_3_btn"
+          onclick="javascript:alert('센터 위치 페이지로 이동합니다.')"
+        >
+          <span>go to link &gt;</span>
+        </div>
+      </div>
+    </div>
+    <!--@import(/layout/basic/components/footer.html)-->
+
+    <div id="wrap">
+      <div id="container">
+        <div id="contents">
+          <!--@contents-->
+        </div>
+        <hr class="layout" />
+
+        <div id="sidebar">
+          <div id="category" module="Layout_category">
+            <!--@css(/css/module/layout/category.css)-->
+            <!--@js(/js/module/layout/category.js)-->
+            <div class="position">
+              <ul>
+                <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div module="Layout_BoardInfo">
+            <!--@css(/css/module/layout/boardInfo.css)-->
+            <h2>전체게시판</h2>
+            <ul>
+              <li>
+                <a href="{$link_board_list}">{$board_name}</a>
+                {$board_adult_icon}
+              </li>
+              <li>
+                <a href="{$link_board_list}">{$board_name}</a>
+                {$board_adult_icon}
+              </li>
+            </ul>
+          </div>
+
+          <div module="Layout_SearchSide">
+            <!--@css(/css/module/layout/searchSide.css)-->
+            <!--
+                    $search_page = /product/search.html
+                    $product_page = /product/detail.html
+                -->
+            <h2>상품검색</h2>
+            <fieldset>
+              <legend>검색</legend>
+              {$form.keyword}<input
+                type="image"
+                src="//img.echosting.cafe24.com/skin/base/layout/btn_search.gif"
+                alt="검색"
+                onclick="{$action_search_submit}"
+              />
+              <ul class="autoDrop" id="{$search_auto_id}"></ul>
+            </fieldset>
+            <div class="bestKeyword {$hot_keyword_display|display}">
+              <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+              <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+            </div>
+            <p class="button">
+              <a href="/product/search.html" class="btnLink">상품상세검색</a>
+            </p>
+          </div>
+
+          <div module="Layout_project">
+            <!--@css(/css/module/layout/project.css)-->
+            <!--@js(/js/rotate.js)-->
+            <!--@js(/js/module/layout/project.js)-->
+            <h2>쇼핑기획전</h2>
+            <ul>
+              <li>
+                <a href="{$link_product_project}"
+                  ><img src="{$category_image}" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="{$link_product_project}"
+                  ><img src="{$category_image}" alt=""
+                /></a>
+              </li>
+            </ul>
+            <div class="control">
+              <button type="button" class="prev" id="prevButton-project">
+                <span>이전</span>
+              </button>
+              <button type="button" class="stop" id="stopButton-project">
+                <span>멈춤</span>
+              </button>
+              <button type="button" class="play" id="playButton-project">
+                <span>재생</span>
+              </button>
+              <button type="button" class="next" id="nextButton-project">
+                <span>다음</span>
+              </button>
+            </div>
+          </div>
+
+          <div module="Layout_login">
+            <!--@css(/css/module/layout/login.css)-->
+            <h2>회원로그인</h2>
+            <fieldset>
+              <legend>회원로그인</legend>
+              <p class="check">
+                <span
+                  ><label
+                    for="member_id"
+                    class="ePlaceholder"
+                    title="{$login_id_type_text}"
+                    >{$form.member_id}</label
+                  ></span
+                >
+                <span
+                  ><label
+                    for="member_passwd"
+                    class="ePlaceholder"
+                    title="비밀번호"
+                    >{$form.member_passwd}</label
+                  ></span
+                >
+              </p>
+              <p class="security">
+                {$form.check_save_id} {$form.check_secret_connect}
+              </p>
+              <div class="ec-base-button gColumn">
+                <a
+                  href="#none"
+                  onclick="{$action_func_login}"
+                  class="btnSubmit sizeS"
+                  >로그인</a
+                >
+                <a href="/member/join.html" class="btnNormal sizeS">회원가입</a>
+              </div>
+            </fieldset>
+            <ul class="find">
+              <li><a href="/member/id/find_id.html">아이디찾기</a></li>
+              <li>
+                <a href="/member/passwd/find_passwd_info.html">비밀번호찾기</a>
+              </li>
+            </ul>
+          </div>
+
+          <div module="Layout_Info">
+            <!--@css(/css/module/layout/info.css)-->
+            <h2>고객센터</h2>
+            <ul>
+              <li class="tel">
+                <strong>Telephone</strong><span>{$phone}</span>
+              </li>
+              <li><strong>Fax</strong><span>{$fax}</span></li>
+              <li><strong>Time</strong><span>{$runtime}</span></li>
+            </ul>
+          </div>
+
+          <div module="Layout_Myshop">
+            <!--@css(/css/module/layout/myshop.css)-->
+            <h2>마이쇼핑</h2>
+            <ul>
+              <li class="order">
+                <a href="/myshop/order/list.html">주문내역조회</a>
+              </li>
+              <li class="mileage">
+                <a href="/myshop/mileage/historyList.html">적립금</a>
+              </li>
+              <li class="member"><a href="/member/modify.html">회원정보</a></li>
+              <li class="consult {$consult_display|display}">
+                <a href="/board/consult/list.html">1:1 맞춤상담</a>
+              </li>
+              <li class="wish">
+                <a href="/myshop/wish_list.html">관심상품</a>
+              </li>
+            </ul>
+          </div>
+
+          <div module="Layout_Poll">
+            <!--@css(/css/module/layout/poll.css)-->
+            <h2>온라인 설문조사</h2>
+            <h3 title="질문">{$poll_title}</h3>
+            <fieldset>
+              <legend>설문조사 항목</legend>
+              <ul>
+                <li>{$poll} {$poll_name}</li>
+                <li>{$poll} {$poll_name}</li>
+                <li>{$poll} {$poll_name}</li>
+                <li>{$poll} {$poll_name}</li>
+              </ul>
+              <p class="button">
+                <a href="#none" onclick="{$action_poll_result}" class="btnLink"
+                  >결과보기</a
+                >
+                <a href="#none" onclick="{$action_poll_submit}" class="btnLink"
+                  >투표하기</a
+                >
+              </p>
+            </fieldset>
+          </div>
+
+          <div class="banner">
+            <p module="Layout_giftBanner">
+              <a href="/order/gift_list.html" class="giftBanner"
+                >고객사은품 안내</a
+              >
+            </p>
+            <p module="Layout_opdiaryBanner">
+              <a href="/board/opdiary/list.html" class="opdiaryBanner"
+                >운영일지</a
+              >
+            </p>
+            <p module="Layout_sosBanner">
+              <a href="/board/urgency/urgency.html" class="sosBanner"
+                >긴급 문의</a
+              >
+            </p>
+            <p module="Layout_attendBanner">
+              <!--
+                        $stamp_type_url = /attend/stamp.html
+                        $comment_type_url = /attend/comment.html
+                    -->
+              <a href="{$attend_url}" class="attendBanner">출석체크</a>
+            </p>
+            <p module="Layout_couponzoneBanner">
+              <a href="/coupon/coupon_zone.html" class="couponzoneBanner"
+                >알뜰살뜰 쿠폰존</a
+              >
+            </p>
+            <p module="Layout_calendarBanner">
+              <a href="{$calendar_view_page}" class="calendarBanner"
+                >캘린더 게시판</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="layout" />
+
+      <div id="quick">
+        <div module="Layout_orderBasketcount">
+          <!--@css(/css/module/layout/orderBasketcount.css)-->
+          <strong>장바구니</strong>
+          <span><a href="/order/basket.html">{$basket_count}</a>개</span>
+        </div>
+
+        <div module="Layout_productRecent">
+          <!--@css(/css/module/layout/productRecent.css)-->
+          <h2><a href="/product/recent_view_product.html">최근 본 상품</a></h2>
+          <ul>
+            <li class="{$disp_recent|display}">
+              <a href="/product/detail.html{$param}"
+                ><img src="{$recent_img}" alt="" /><span>{$name}</span></a
+              >
+            </li>
+            <li class="{$disp_recent|display}">
+              <a href="/product/detail.html{$param}"
+                ><img src="{$recent_img}" alt="" /><span>{$name}</span></a
+              >
+            </li>
+          </ul>
+          <p class="player">
+            <img
+              src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_prev.gif"
+              alt="이전 제품"
+              class="prev"
+            /><img
+              src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_next.gif"
+              alt="다음 제품"
+              class="next"
+            />
+          </p>
+        </div>
+
+        <p class="pageTop">
+          <a href="#header" title="화면 최상단으로 이동하기"
+            ><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/btn_top1.gif"
+              alt="맨위로"
+          /></a>
+        </p>
+      </div>
+    </div>
+    <hr class="layout" />
+
+    <div id="footer">
+      <div class="inner">
+        <span module="Layout_LogoBottom">
+          <!--@css(/css/module/layout/logobottom.css)-->
+          <a href="/index.html">{$mall_name}</a>
+        </span>
+
+        <div module="Layout_footer">
+          <!--@css(/css/module/layout/footer.css)-->
+          <ul class="utilMenu">
+            <li class="home"><a href="/index.html">홈</a></li>
+            <li><a href="/shopinfo/company.html">회사소개</a></li>
+            <li><a href="/member/agreement.html">이용약관</a></li>
+            <li>
+              <a href="/member/privacy.html"
+                ><strong>개인정보처리방침</strong></a
+              >
+            </li>
+            <li><a href="/shopinfo/guide.html">이용안내</a></li>
+            <div module="Layout_ReferenceCurrencyList" class="list">
+              <!--@css(/css/module/layout/multiCurrency.css)-->
+              <button
+                type="button"
+                class="toggle"
+                id="reference_currency_button"
+              >
+                <span class="btn-global">참조화폐</span>
+                <span class="currencyNow"
+                  >{$current_reference_currency_code}
+                  {$current_reference_currency_symbol}</span
+                >
+              </button>
+              <ul
+                module="Layout_ReferenceCurrencyListitem"
+                class="multicurrencylistitem"
+                id="reference_currency_list"
+              >
+                <li class="">
+                  <a href="#">
+                    <span class="name">{$reference_currency_code}</span>
+                    <span class="unit">{$reference_currency_symbol}</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#">
+                    <span class="name">{$reference_currency_code}</span>
+                    <span class="unit">{$reference_currency_symbol}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </ul>
+          <p class="address">
+            <span>법인명(상호) : {$company_name} </span>
+            <span>대표자(성명) : {$president_name}</span>
+            <span>사업자 등록번호 안내 : [{$company_regno}]</span>
+            <span>통신판매업 신고 {$network_regno}</span>
+            <span>{$biz_no_link}</span> <br />
+            <span>전화 : {$phone}</span> <span>팩스 : {$fax}</span>
+            <span>주소 : {$mall_zipcode} {$mall_addr1} {$mall_addr2}</span
+            ><br />
+            <span class="{$cpo_email|display}"
+              >개인정보보호책임자 :
+              <a href="mailto:{$cpo_email}">{$cpo_name}({$cpo_email})</a></span
+            ><br />
+            <span
+              >Contact
+              <strong><a href="mailto:{$email}">{$email}</a></strong> for more
+              information.</span
+            >
+          </p>
+          <p class="copyright">
+            Copyright &copy; <strong>{$mall_name}</strong>. All rights reserved.
+          </p>
+          <p class="hosting">
+            <img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/logo_cafe24.png"
+              alt="hosting by cafe24 카페24(주)"
+            />
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 결제를 위한 필수 영역 -->
+    <div id="progressPaybar" style="display: none">
+      <div id="progressPaybarBackground" class="layerProgress"></div>
+      <div id="progressPaybarView">
+        <div class="box">
+          <p class="graph">
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif"
+                alt="현재 결제가 진행중입니다."
+            /></span>
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif"
+                alt=""
+            /></span>
+          </p>
+          <p class="txt">
+            본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을
+            닫으시면<br />
+            주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- // 결제를 위한 필수 영역 -->
+
+    <div module="Layout_multishopShipping">
+      <!--@css(/layout/basic/css/ec-base-layer.css)-->
+      <!--@css(/css/module/layout/multishopShipping.css)-->
+      <!--@js(/js/module/layout/multishopShipping.js)-->
+      <div class="dimmed"></div>
+      <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+          <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+          <p class="desc">
+            PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :
+          </p>
+          <div class="select">
+            <select module="Layout_multishopShippingCountrylist">
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+            </select>
+          </div>
+          <div class="select">
+            <select module="Layout_multishopShippingLanguagelist">
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none" class="btnSubmitFix sizeS">GO</a>
+        </div>
+        <a href="#none" class="close"
+          ><img
+            src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
+            width="13"
+            height="13"
+            alt="close"
+        /></a>
+      </div>
+    </div>
+
+    <div module="Layout_conversionPc">
+      <!--@css(/css/module/layout/conversionpc.css)-->
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+  </body>
+</html>

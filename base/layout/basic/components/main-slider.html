@@ -1,0 +1,281 @@
+<!--css-->
+<style>
+  #main-visual {
+    width: 100%;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  #main-visual .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  #main-visual .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    height: auto;
+    background: transparent;
+    cursor: pointer;
+  }
+  #main-visual .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #main-visual .swiper-button-prev,
+  .swiper-button-next {
+    transition: all 1s;
+    opacity: 0 !important;
+    color: #fff !important;
+  }
+  #main-visual:hover .swiper-button-prev {
+    left: 50px;
+    opacity: 1 !important;
+  }
+  #main-visual:hover .swiper-button-next {
+    right: 50px;
+    opacity: 1 !important;
+  }
+  .slide-con {
+    position: absolute;
+    bottom: 75px;
+    left: 60px;
+  }
+  .slide-con .sc-text {
+    margin-bottom: 50px;
+  }
+  .slide-con .sc-text span {
+    display: block;
+    text-align: left;
+    color: #f0468c;
+  }
+  .slide-con .sc-text span:nth-child(1) {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "GmarketSansMedium";
+  }
+  .slide-con .sc-text span:nth-child(2) {
+    font-size: 22px;
+  }
+  .slide-con .sc-btn {
+  }
+  .slide-con .sc-btn span {
+    display: block;
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    background: #f0468c;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+    padding: 0 30px 4px;
+    line-height: 60px;
+  }
+</style>
+<div id="main-visual">
+  <div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!--슬라이더의 월이벤트 이미지 입니다.-->
+          <a href="/article/진행중인-이벤트/40/9107/"
+            ><img src="/web/images/ccds/renew_slide_2507.png" alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>event</span>
+              <span>7월, 여성헬스 월 3만원 </span>
+            </div>
+            <div
+              class="sc-btn"
+              onclick="location.href='/article/진행중인-이벤트/40/9107/'"
+            >
+              <span>more &gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!--슬라이더의 두번째 이미지 입니다.-->
+          <a href="/article/공지사항/1/9103/"
+            ><img
+              src="/web/images/ccds/renew_slide_open2930.png"
+              alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>grand open</span>
+              <span>휘트니스피플 우먼 29호 사당점,30호 왕십리점 오픈</span>
+            </div>
+            <div
+              class="sc-btn"
+              onclick="location.href='/article/공지사항/1/9103/'"
+            >
+              <span>more &gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!--슬라이더의 세번째 이미지 입니다.-->
+          <a href="page/brand/brand.html?brandstory"
+            ><img
+              src="/web/images/ccds/renew_slide_brandstroy.png"
+              alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>brand story</span>
+              <span>여자들만 운동해, 휘트니스피플 우먼</span>
+            </div>
+            <div
+              class="sc-btn"
+              onclick="location.href='page/brand/brand.html?brandstory'"
+            >
+              <span>more &gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!--슬라이더의 네번째 이미지 입니다.-->
+          <a href="/page/recruit/index.html?recruit"
+            ><img
+              src="/web/images/ccds/renew_slide_recruit.png"
+              alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>recruit</span>
+              <span>여성전문 휘트니스피플 우먼 채용공고</span>
+            </div>
+            <div
+              class="sc-btn"
+              onclick="location.href='/page/recruit/index.html?recruit'"
+            >
+              <span>more &gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!--슬라이더의 다섯번째 이미지 입니다.-->
+          <a href="/page/academy/academy.html?FPA"
+            ><img
+              src="/web/images/ccds/renew_slide_academy4.png"
+              alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>academy</span>
+              <span>휘트니스피플우먼 정기교육</span>
+            </div>
+            <div
+              class="sc-btn"
+              onclick="location.href='/page/academy/academy.html?FPA'"
+            >
+              <span>more &gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!--슬라이더의 여섯번째 이미지 입니다.-->
+          <a href="/board/리얼-스토리/8/"
+            ><img
+              src="/web/images/ccds/renew_slide_realstory.png"
+              alt="1920x1080"
+          /></a>
+          <div class="slide-con">
+            <div class="sc-text">
+              <span>review</span>
+              <span>휘트니스피플우먼과 운동한 후기</span>
+            </div>
+            <div class="sc-btn" onclick="location.href='/board/리얼-스토리/8/'">
+              <span>more &gt;</span>
+            </div>
+          </div>
+         </div>
+        </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper("#main-visual .mySwiper", {
+        loop: true,
+        effect: "fade", // 페이드 효과 사용
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <!--롤링-->
+
+    <div id="rolling-banner">
+      <style>
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .top_rolling_banner {
+          overflow: hidden;
+          position: relative;
+          background-color: #f0468c;
+          color: white;
+          padding: 20px 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        .marq {
+          display: inline-block;
+          width: 200%;
+          white-space: nowrap;
+          animation: scrollLeft 22s linear infinite;
+        }
+      </style>
+      <div class="top_rolling_banner">
+        <div class="marq">
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+          <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

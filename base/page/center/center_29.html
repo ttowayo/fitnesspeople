@@ -1,0 +1,200 @@
+<div class="center-name" data-center="사당점">
+  <div class="top-title">
+    <div class="intro-box">
+      <div class="ib-top">
+        <h3>사당점</h3>
+        <div class="ib-top-text">
+          <!--@import(/page/center/marker.html)-->
+          <span>서울시 관악구 남현1길 58 NAMU 4층</span>
+        </div>
+      </div>
+      <!--상단(지점)-->
+      <div class="ib-mid">
+        <h4>운영시간</h4>
+        <table>
+          <tr>
+            <th>평일(월~금)</th>
+            <td>06:00 ~ 23:00</td>
+            <th>전화번호</th>
+            <td>02-522-3912</td>
+          </tr>
+          <tr>
+            <th>주말(토~일, 공휴일)</th>
+            <td>10:00 ~ 20:00</td>
+            <th>휴관일</th>
+            <td>신정, 설, 추석연휴(마지막날 제외)</td>
+          </tr>
+        </table>
+      </div>
+      <!--중단(운영시간)-->
+      <div class="ib-bottom">
+        <div class="grid-item" onclick="javascript:window.location.href='https://naver.me/FvQ5tjiz'">
+          위치 안내
+        </div>
+        <div class="grid-item" onclick="javascript:window.location.href='https://pf.kakao.com/_uxeNan'">
+          카카오 상담
+        </div>
+        <div class="grid-item" onclick="javascript:window.location.href='https://naver.me/xfYFekOz'">
+          네이버 예약
+        </div>
+      </div>
+      <!--하단(버튼)-->
+    </div>
+  </div>
+  <!--상단-->
+  <div class="staff-intro">
+    <div class="si-top">
+      <h3>스탭 소개</h3>
+      <!--@import(/page/center/arrow_right_button.html)-->
+    </div>
+
+    <div class="container" module="product_listnormal">
+      <!--
+            $count = 20
+                ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+            $basket_result = /product/add_basket.html
+            $basket_option = /product/basket_option.html
+          -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!--
+                $count = 10
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+              -->
+          <div
+            id="anchorBoxId_{$product_no}"
+            class="swiper-slide"
+            onclick="javascript:window.location.href='{$link_product_detail}'"
+          >
+            <!--슬라이더의 첫번째 이미지 입니다.-->
+            <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+            <div class="board_15_txt">
+              <span> {$product_name}</span>
+            </div>
+          </div>
+          <div
+            id="anchorBoxId_{$product_no}"
+            class="swiper-slide"
+            onclick="javascript:window.location.href='{$link_product_detail}'"
+          >
+            <!--슬라이더의 두번째 이미지 입니다.-->
+            <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+            <div class="board_15_txt">
+              <span>{$product_name}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--스탭소개-->
+  <div class="place-intro">
+    <div class="si-top">
+      <h3>시설 소개</h3>
+    </div>
+
+    <div class="container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!--슬라이더의 첫번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_1.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 두번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_2.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 세번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_3.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 네번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_4.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 다섯번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_5.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 여섯번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_6.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 일곱번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_7.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 여덟번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_8.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 아홉번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_9.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 열번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_10.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 열한번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_11.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 열두번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_12.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+            <div class="swiper-slide">
+            <!--슬라이더의 열세번째 이미지 입니다.-->
+            <img
+              src="/web/images/ccds/center/center/center_sadang_13.jpg"
+              alt="시설이미지 1240x600"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+  <!--시설소개-->
+</div>

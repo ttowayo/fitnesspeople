@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--@import(/layout/basic/components/meta.html)-->
+  <body id="main" class="anotherHeader">
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+    <!--헤더-->
+    <!--@import(/layout/basic/components/header.html)-->
+    <!--메인슬라이더-->
+    <!--@import(/layout/basic/components/main-slider.html)-->
+
+    <!--section1-->
+    <style>
+      /*이미지 */
+      #section_1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_1 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_1 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_1 > p > a {
+        color: #999;
+      }
+      #section_1 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      #section_1 .img_wrap {
+        display: block;
+        overflow: hidden;
+      }
+      #section_1 .img_wrap img {
+        width: 100%;
+      }
+      #section_1 .img_wrap:hover img {
+        transition: all 1.5s;
+        transform: scale(1.05);
+      }
+      #section_1 .board_8_txt {
+        margin-top: 20px;
+        padding: 0px 5px;
+        box-sizing: border-box;
+      }
+      #section_1 .board_8_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_1" module="Board_ListPackage_8">
+      <h3>real story</h3>
+      <p><a href="/board/리얼-스토리/8/">show more</a></p>
+      <div class="container" module="board_list_8">
+        <!--
+          $count = 6
+          $login_page_url = /member/login.html
+          $deny_access_url = /index.html
+          -->
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--section2-->
+    <style>
+      /*이미지 */
+      #section_2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_2 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_2 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_2 > p > a {
+        color: #999;
+      }
+      #section_2 .container {
+        width: 1240px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      #section_2 .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      #section_2 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #section_2 .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      #section_2 .board_15_txt {
+        padding: 0px 5px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+      }
+      #section_2 .board_15_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_2" module="Board_ListPackage_14">
+      <h3>interview</h3>
+      <p><a href="/board/before-after/14/">show more</a></p>
+
+      <div class="container" module="board_list_14">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!--
+                $count = 6
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+              -->
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 첫번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 두번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Initialize Swiper -->
+    <script>
+      var section_2_swiper = new Swiper("#section_2 .mySwiper", {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+        freeMode: true,
+      });
+    </script>
+
+    <!--section3-->
+    <style>
+      #section_3 {
+        width: 100%;
+        min-width: 1240px;
+        height: 737px;
+        margin-top: 150px;
+        overflow: hidden;
+      }
+      #section_3 .section_3_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("/web/images/ccds/renew_center_img2.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: all 1s;
+      }
+      #section_3:hover .section_3_wrap {
+        transform: scale(1.1);
+      }
+
+      #section_3 .section_3_wrap > * {
+        transition: all 1s;
+      }
+
+      #section_3:hover .section_3_wrap > * {
+        transform: scale(0.909);
+      }
+      #section_3 h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 50px;
+        color: #fff;
+      }
+      .section_3_btn {
+        width: 230px;
+        height: 60px;
+        background-color: #f0468c;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 24px;
+        margin-top: 300px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+    <div id="section_3">
+      <div class="section_3_wrap">
+        <h3>center</h3>
+        <div
+          class="section_3_btn"
+          onclick="javascript:window.location.href='/page/location.html'"
+        >
+          <span>go to link &gt;</span>
+        </div>
+      </div>
+    </div>
+    <!--section4-->
+    <style>
+      /*이미지 */
+      #section_4 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_4 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_4 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_4 > p > a {
+        color: #999;
+      }
+      #section_4 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      #section_4 .container > div {
+        position: relative;
+        cursor: pointer;
+      }
+      #section_4 .container > div > img {
+        width: 100%;
+        height: 100%;
+      }
+      #section_4 .section_4_btn {
+        width: 210px;
+        height: 60px;
+        background-color: #f0468c;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        margin-left: -105px;
+        border-radius: 20px;
+      }
+      #section_4 .section_4_btn > span {
+        color: #fff;
+        font-size: 24px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 60px;
+      }
+    </style>
+    <div id="section_4">
+      <h3>notice</h3>
+      <p><a href="/board/공지사항/1/">show more</a></p>
+      <div class="container">
+        <div
+          onclick="javascript:window.location.href='/board/무료체험권-신청/1002/'"
+        >
+          <img
+            src="/web/images/ccds/renew_notice_img_10.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>무료체험권신청</span></div>
+        </div>
+        <div onclick="javascript:window.location.href='/board/공지사항/1/'">
+          <img
+            src="/web/images/ccds/renew_notice_img_8.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>공지사항</span></div>
+        </div>
+        <div
+          onclick="javascript:window.location.href='/board/진행중인-이벤트/40/'"
+        >
+          <img
+            src="/web/images/ccds/renew_notice_img_11.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>이벤트</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!--@import(/layout/basic/components/instagram.html)-->
+    <!--@import(/layout/basic/components/quick.html)-->
+    <!--@import(/layout/basic/components/footer.html)-->
+
+    <div module="Layout_conversionPc">
+      <!--@css(/css/module/layout/conversionpc.css)-->
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+    <!-- Smartlog -->
+    <script type="text/javascript">
+      var hpt_info = { _account: "UHPT-26871", _server: "a27" };
+    </script>
+    <script
+      language="javascript"
+      src="//cdn.smlog.co.kr/core/smart.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

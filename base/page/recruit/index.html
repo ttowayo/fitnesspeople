@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--@import(/layout/basic/components/meta.html)-->
+  <body>
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+
+    <!--@import(/layout/basic/components/header.html)-->
+    <hr class="layout" />
+    <style>
+      #wrap {
+      position: relative;
+        }
+
+      #apply-stop-point {
+      display: block;
+      margin: 0;
+      padding: 0;
+        }
+        
+      .content-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 0;
+      }
+        
+      .content-box img {
+        width: 100%;
+        display: block;
+
+      }
+        
+      /* ✅ 하단 고정 지원하기 버튼 (PC) */
+      .floating-apply-btn {
+          display: flex;
+  	      justify-content: center;
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 9998; /* 퀵버튼보다 아래 */
+          width: 100%;
+          max-width: 1001px;
+          padding: 0;
+          margin: 0;
+          line-height: 0;
+          text-align: center; /* ✅ 내부 요소 가운데 정렬 */
+      	}
+
+         .floating-apply-btn img {
+          max-width: 1001px;
+          display: block;
+          margin: 0 auto;
+        }
+    </style>
+      
+    <div id="wrap">
+      <div id="container">
+        <div id="contents">
+          <div class="content-box">
+            <img src="/web/images/sub/recruit_detail_1.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_2.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_33.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_4.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_5.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_6.jpg" alt="브랜드 이미지" />
+            <img src="/web/images/sub/recruit_detail_7.jpg" alt="브랜드 이미지" />
+            <img id="apply-stop-point" src="/web/images/sub/recruit_detail_8_ver2.jpg" alt="브랜드 이미지" />
+           </div>
+         </div>
+                  
+		<!-- ✅ 하단 고정 지원하기 버튼 -->
+        <a href="/page/recruit/apply.html" class="floating-apply-btn"><img src="/web/images/sub/recruit_detail_9_btn_ver2.png" alt="지원하기 버튼" /></a>
+       </div>
+    </div>
+
+    <!--@import(/layout/basic/components/quick.html)-->
+    <!--@import(/layout/basic/components/footer.html)-->
+
+       <!-- ✅ 버튼 스크롤 위치 제어 스크립트 -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const button = document.querySelector('.floating-apply-btn');
+          const stopPoint = document.getElementById('apply-stop-point');
+
+          const checkPosition = () => {
+            const stopPointTop = stopPoint.getBoundingClientRect().top;
+            const buttonHeight = button.offsetHeight;
+
+            if (stopPointTop <= buttonHeight + 2) {
+              button.style.position = 'absolute';
+              button.style.bottom = '30px';
+            } else {
+              button.style.position = 'fixed';
+              button.style.bottom = '0px';
+            }
+          };
+
+          window.addEventListener('scroll', checkPosition);
+          window.addEventListener('resize', checkPosition);
+          checkPosition();
+        });
+      </script>
+      
+      
+    <!-- 결제를 위한 필수 영역 -->
+    <div id="progressPaybar" style="display: none">
+      <div id="progressPaybarBackground" class="layerProgress"></div>
+      <div id="progressPaybarView">
+        <div class="box">
+          <p class="graph">
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif"
+                alt="현재 결제가 진행중입니다."
+            /></span>
+            <span
+              ><img
+                src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif"
+                alt=""
+            /></span>
+          </p>
+          <p class="txt">
+            본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을
+            닫으시면<br />
+            주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- // 결제를 위한 필수 영역 -->
+
+    <div module="Layout_multishopShipping">
+      <!--@css(/layout/basic/css/ec-base-layer.css)-->
+      <!--@css(/css/module/layout/multishopShipping.css)-->
+      <!--@js(/js/module/layout/multishopShipping.js)-->
+      <div class="dimmed"></div>
+      <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+          <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+          <p class="desc">
+            PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :
+          </p>
+          <div class="select">
+            <select module="Layout_multishopShippingCountrylist">
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+              <option value="{$country_code}" {$country_default_selected}>
+                SHIPPING TO : {$country_name}
+              </option>
+            </select>
+          </div>
+          <div class="select">
+            <select module="Layout_multishopShippingLanguagelist">
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+              <option value="{$shop_domain}" {$shop_default_selected}>
+                LANGUAGE : {$shop_language_name}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none"
+            ><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/link/btn_go.gif"
+              alt="GO"
+          /></a>
+        </div>
+        <a href="#none" class="close"
+          ><img
+            src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
+            width="13"
+            height="13"
+            alt="close"
+        /></a>
+      </div>
+    </div>
+
+    <div module="Layout_conversionPc">
+      <!--@css(/css/module/layout/conversionpc.css)-->
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+    <!-- Smartlog -->
+    <script type="text/javascript">
+      var hpt_info = { _account: "UHPT-26871", _server: "a27" };
+    </script>
+    <script
+      language="javascript"
+      src="//cdn.smlog.co.kr/core/smart.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
