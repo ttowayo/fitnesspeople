@@ -1,1157 +1,1249 @@
-<!--@layout(/layout/basic/main.html)-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- PG크로스브라우징필수내용 -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!-- // PG크로스브라우징필수내용 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <title>기본 레이아웃</title>
+    <link rel="stylesheet" href="./layout/basic/css/xeicon.min.css">
+    <link rel="stylesheet" href="./layout/basic/css/common.css">
+    <!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
+    <link rel="stylesheet" href="./layout/basic/css/layout.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-ui.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-tooltip.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-help.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-product.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-paginate.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-tab.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-button.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-box.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-table.css">
+    <link rel="stylesheet" href="./layout/basic/css/ec-base-desc.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="./layout/basic/js/basic.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/module/layout/quick_view.js"></script>
+    <link
+      rel="stylesheet"
+      href="//fastly.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body id="main" class="anotherHeader">
+    <div id="skipNavigation">
+      <p><a href="#category">전체상품목록 바로가기</a></p>
+      <p><a href="#contents">본문 바로가기</a></p>
+    </div>
+    <!--헤더-->
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    </head>
+    <style>
+      #header {
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 9999;
+        background: transparent;
+      }
+
+      .wrapper {
+        width: 100%;
+        min-width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hd-top .wrapper {
+        background-color: #f0468c;
+        color: #fff;
+        height: 34px;
+        font-size: 12px;
+      }
+
+      .hd-mid .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        height: 60px;
+        padding: 0 25px;
+        box-sizing: border-box;
+      }
+    .hd-mid .wrapper .bars {
+        cursor: pointer;
+        width: 30px;
+        height: 40px;
+        color: #f0468c;
+        display: flex;
+        align-items: center;
+    }
+
+    .hd-mid .wrapper .bars img {
+        width: 100%;
+        height: 100%;
+    }
+      .hd-mid .wrapper #logo {
+        cursor: pointer;
+      }
+
+      .hd-mid .wrapper #logo a {
+        width: 135px;
+        height: 41px;
+        display: block;
+      }
+      .hd-mid .wrapper #logo a img {
+        width: 100%;
+      }
+
+      .hd-mid .wrapper .icons {
+        cursor: pointer;
+        width: 20px;
+        color: #f0468c;
+        display: flex;
+        align-items: center;
+      }
+      .hd-mid .wrapper .icons img {
+        width: 20px;
+      }
+      #gnb {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        cursor: pointer;
+        width: 100%;
+        min-width: 320px;
+        position: absolute;
+        top: 94px;
+        left: 0;
+        box-sizing: border-box;
+      }
+      #gnb .gnb-wrap {
+        text-align: center;
+        display: none;
+      }
+      #gnb .gnb-wrap .first-menu {
+        display: flex;
+        justify-content: flex-start;
+         flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      #gnb .gnb-wrap .first-menu > a {
+        display: block;
+        padding: 15px 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #f0468c;
+        padding-left: 20px;
+      }
+      #gnb .gnb-wrap .first-menu:hover > a {
+        color: #f0468c;
+      }
+      #gnb .gnb-wrap .second-menu {
+        display: none;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 10px;
+        box-sizing: border-box;
+        text-align: left;
+        max-height: 300px;
+        overflow-y: auto;
+        position: relative;
+        z-index: 9999;     
+      }
+      #gnb .gnb-wrap .second-menu > .second-menu-list > a {
+        display: block;
+        padding: 5px 10px;
+        font-size: 16px;
+        color: #878787;
+        font-weight: 400;
+        text-align: left;
+      }
+      #gnb .gnb-wrap .second-menu > .second-menu-list:hover > a {
+        color: #999;
+        z-index: 9999;
+      }
+      .back-bg {
+        position: fixed;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.7);
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+      #btnBack {
+        display: none !important;
+      }
+      .icons {
+        visibility: hidden;
+      }
+    </style>
+    <div class="back-bg"></div>
+    <div id="header">
+      <div class="hd-top">
+        <div class="wrapper" module="Board_ListPackage_1">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper" module="board_list_1">
+              <div class="swiper-slide">
+                <a href="/board/free/read.html{$param_read}">{$subject}</a>
+  </div>
+              <div class="swiper-slide">
+                <a href="/board/free/read.html{$param_read}">{$subject}</a>
+        </div>
+              <div class="swiper-slide">
+                <a href="/board/free/read.html{$param_read}">{$subject}</a>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hd-mid">
+        <div class="wrapper">
+          <div class="bars">
+            <img src="/web/upload/logo/bar-icon.svg" alt="bar" />
+      </div>
+          <div id="logo">
+            <a href="/"
+            ><img
+                src="/web/images/ccds/renew_logo_color2.png"
+                alt="fitness people's logo"
+            /></a>
+        </div>
+          <div class="icons">
+            <img src="/web/upload/logo/plus-icon.svg" alt="plus" />
+          </div>
+            </div>
+          </div>
+      <div id="gnb">
+        <ul class="gnbs gnb-wrap">
+          <li class="first-menu">
+            <a href="javascript:void(0);">BRAND</a>
+            <ul class="second-menu">
+              <li class="second-menu-list">
+                <a href="/page/brand/brand.html?brandstory">BRAND STORY</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="/page/brand/doongs.html?doongs">DOONGS</a>
+          </li>
+        </ul>
+    </li>
+          <li class="first-menu">
+            <a href="javascript:void(0);">CENTER</a>
+            <ul class="second-menu" module="Layout_category">
+              <li class="second-menu-list">
+                <a href="{$link_product_list}">{$name_or_img_tag}</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="{$link_product_list}">{$name_or_img_tag}</a>
+              </li>
+              <li class="second-menu-list">
+                <a href="{$link_product_list}">{$name_or_img_tag}</a>
+          </li>
+        </ul>
+    </li>
+          <li class="first-menu">
+            <a href="#">PROGRAM</a>
+            <ul class="second-menu">
+              <li class="second-menu-list">
+                <a href="/page/program/pt.html?pt">PT</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="/page/program/fitt.html?fitt">FITT</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="#">APP</a>
+    </li>
+  </ul>
+          </li>
+          <li class="first-menu">
+              <a href="/page/benefit/partnership.html?partnership">PARTNERSHIP</a>
+          </li>
+          <li class="first-menu">
+            <a href="#">REVIEW</a>
+            <ul class="second-menu">
+              <li class="second-menu-list">
+                <a href="/board/리얼-스토리/8/">REALSTORY</a>
+    </li>
+              <li class="second-menu-list">
+                <a href="/board/before-after/14/">INTERVIEW</a>
+          </li>
+        </ul>
+    </li>
+          <li class="first-menu">
+            <a href="#">ACADEMY</a>
+            <ul class="second-menu">
+              <li class="second-menu-list">
+                <a href="/page/academy/academy.html?FPA">FPA</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="/board/교육-일정/41/">SCHEDULE</a>
+          </li>
+        </ul>
+    </li>
+          <li class="first-menu">
+            <a href="/page/recruit/">RECRUIT</a>
+          </li>
+          <li class="first-menu">
+            <a href="https://people10000.cafe24.com/skin-mobile37/board/%EC%A7%84%ED%96%89%EC%A4%91%EC%9D%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8/40/">EVENT</a>
+          </li>
+          <li class="first-menu">
+            <a href="javascript:void(0);">COMMUNITY</a>
+            <ul class="second-menu">
+              <li class="second-menu-list">
+                <a href="/board/무료체험권-신청/1002/">무료체험 신청</a>
+    </li>
+              <li class="second-menu-list">
+                <a href="/board/공지사항/1/">공지사항</a>
+          </li>
+              <li class="second-menu-list">
+                <a href="https://blog.naver.com/fpeoplew1">공식블로그</a>
+              </li>
+              <li class="second-menu-list">
+                <a href="https://www.instagram.com/fitnesspeople_woman/">인스타그램</a>
+          </li>
+        </ul>
+    </li>
+          <li class="first-menu">
+            <a href="https://people10000.cafe24.com/skin-mobile37/member/login.html">LOGIN l JOIN</a>
+          </li>
+        </ul>
+      </div>
+</div>
+
+    <script>
+      $(function () {
+        if ($("#main").hasClass("anotherHeader")) {
+          $("#header").css("position", "fixed");
+        }
+        $(window).scroll(function () {
+          let scrollTop = $(window).scrollTop();
+          if (scrollTop > 10) {
+            $("#header").css("position", "fixed");
+            $(".hd-top").hide();
+            $(".hd-mid .wrapper").css(
+              "background",
+              "linear-gradient(0deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.7) 100%)"
+            );
+            $("#gnb").css("top", "60px");
+          } else {
+            if (!$("#main").hasClass("anotherHeader")) {
+              $("#header").css("position", "relative");
+            }
+            $(".hd-top").show();
+            $("#gnb").css("top", "94px");
+            if ($(".bars").hasClass("open")) {
+              $(".hd-mid .wrapper").css(
+                "background",
+                "linear-gradient(0deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.7) 100%)"
+              );
+            } else {
+              $(".hd-mid .wrapper").css(
+                "background",
+                "linear-gradient(0deg, rgba(247,247,247,0) 0%, rgba(255,255,255,0) 100%)"
+              );
+            }
+          }
+        });
+        $(".first-menu").each(function () {
+          $(this)
+            .find(">a")
+          .click(function () {
+            $(this).toggleClass("open");
+            if ($(this).hasClass("open")) {
+              $(this).siblings(".second-menu").css({
+                display: "flex",
+                "flex-direction": "column",
+              });
+            } else {
+              $(this).siblings(".second-menu").css("display", "none");
+                }
+              });
+        });
+        $(".bars").click(function () {
+          $(this).toggleClass("open");
+          $(".icons").removeClass("open");
+          $(".lnb-wrap").hide();
+          $(".icons").find(">img").attr("src", "/web/upload/logo/plus-icon.svg");
+          if ($(this).hasClass("open")) {
+            $("#gnb").show();
+            $(".back-bg").show();
+            $(".gnb-wrap").show();
+            $(this).find(">img").attr("src", "/web/upload/logo/x-icon.svg");
+            $(".hd-mid .wrapper").css(
+              "background",
+              "linear-gradient(0deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.7) 100%)"
+            );
+          } else {
+            $("#gnb").hide();
+            $(".back-bg").hide();
+            $(".gnbs").hide();
+            $(this).find(">img").attr("src", "/web/upload/logo/bar-icon.svg");
+            $(".hd-mid .wrapper").css(
+              "background",
+              "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)"
+            );
+          }
+        });
+        $(".icons").click(function () {
+          $(this).toggleClass("open");
+          $(".bars").removeClass("open");
+          $(".gnb-wrap").hide();
+          $(".bars").find(">img").attr("src", "/web/upload/logo/bar-icon.svg");
+          if ($(this).hasClass("open")) {
+            $("#gnb").show();
+            $(".back-bg").show();
+            $(".lnb-wrap").show();
+            $(this).find(">img").attr("src", "/web/upload/logo/x-icon.svg");
+            $(".hd-mid .wrapper").css(
+              "background",
+              "linear-gradient(0deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.7) 100%)"
+            );
+          } else {
+            $("#gnb").hide();
+            $(".back-bg").hide();
+            $(".gnbs").hide();
+            $(this).find(">img").attr("src", "/web/upload/logo/plus-icon.svg");
+            $(".hd-mid .wrapper").css(
+              "background",
+              "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)"
+            );
+          }
+        });
+      });
+    </script>
+    <script>
+      var header_swiper = new Swiper("#header .mySwiper", {
+        loop: true,
+        effect: "slide",
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!--메인슬라이더-->
+    <style>
+      #main-visual {
+        width: 100%;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+
+      #main-visual .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      #main-visual .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        height: auto;
+        background: transparent;
+        cursor: pointer;
+      }
+      #main-visual .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #main-visual .swiper-button-prev,
+      .swiper-button-next {
+        transition: all 1s;
+        opacity: 0 !important;
+        color: #fff !important;
+      }
+      #main-visual:hover .swiper-button-prev {
+        left: 50px;
+        opacity: 1 !important;
+      }
+      #main-visual:hover .swiper-button-next {
+        right: 50px;
+        opacity: 1 !important;
+      }
+      .slide-con {
+        position: absolute;
+        bottom: 75px;
+        left: 60px;
+      }
+      .slide-con .sc-text {
+        margin-bottom: 50px;
+      }
+      .slide-con .sc-text span {
+        display: block;
+        text-align: left;
+        color: #f0468c;
+      }
+      .slide-con .sc-text span:nth-child(1) {
+        font-size: 34px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-family: "GmarketSansMedium";
+      }
+      .slide-con .sc-text span:nth-child(2) {
+        font-size: 22px;
+      }
+      .slide-con .sc-btn {
+      }
+      .slide-con .sc-btn span {
+        display: block;
+        width: 300px;
+        height: 60px;
+        border-radius: 50px;
+        background: #f0468c;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        padding: 0 30px 4px;
+        line-height: 60px;
+      }
+    </style>
+    <div id="main-visual">
+      <div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="/article/진행중인-이벤트/40/9107/"
+                ><img src="/web/images/ccds/renew_slide_2507.png" alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>event</span>
+                  <span>7월, 여성헬스 월 3만원 </span>
+                </div>
+                <div
+                  class="sc-btn"
+                  onclick="location.href='/article/진행중인-이벤트/40/9107/'"
+                >
+                  <span>more &gt;</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a href="/article/공지사항/1/9103/"
+                ><img
+                  src="/web/images/ccds/renew_slide_open2930.png"
+                  alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>grand open</span>
+                  <span>휘트니스피플 우먼 29호 사당점,30호 왕십리점 오픈</span>
+                </div>
+                <div
+                  class="sc-btn"
+                  onclick="location.href='/article/공지사항/1/9103/'"
+                >
+                  <span>more &gt;</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a href="page/brand/brand.html?brandstory"
+                ><img
+                  src="/web/images/ccds/renew_slide_brandstroy.png"
+                  alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>brand story</span>
+                  <span>여자들만 운동해, 휘트니스피플 우먼</span>
+                </div>
+                <div
+                  class="sc-btn"
+                  onclick="location.href='page/brand/brand.html?brandstory'"
+                >
+                  <span>more &gt;</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a href="/page/recruit/index.html?recruit"
+                ><img
+                  src="/web/images/ccds/renew_slide_recruit.png"
+                  alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>recruit</span>
+                  <span>여성전문 휘트니스피플 우먼 채용공고</span>
+                </div>
+                <div
+                  class="sc-btn"
+                  onclick="location.href='/page/recruit/index.html?recruit'"
+                >
+                  <span>more &gt;</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a href="/page/academy/academy.html?FPA"
+                ><img
+                  src="/web/images/ccds/renew_slide_academy4.png"
+                  alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>academy</span>
+                  <span>휘트니스피플우먼 정기교육</span>
+                </div>
+                <div
+                  class="sc-btn"
+                  onclick="location.href='/page/academy/academy.html?FPA'"
+                >
+                  <span>more &gt;</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a href="/board/리얼-스토리/8/"
+                ><img
+                  src="/web/images/ccds/renew_slide_realstory.png"
+                  alt="1920x1080"
+              /></a>
+              <div class="slide-con">
+                <div class="sc-text">
+                  <span>review</span>
+                  <span>휘트니스피플우먼과 운동한 후기</span>
+                </div>
+                <div class="sc-btn" onclick="location.href='/board/리얼-스토리/8/'">
+                  <span>more &gt;</span>
+                </div>
+              </div>
+             </div>
+            </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper("#main-visual .mySwiper", {
+            loop: true,
+            effect: "fade",
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+
+        <!--롤링-->
+        <div id="rolling-banner">
+          <style>
+            @keyframes scrollLeft {
+              0% {
+                transform: translateX(0);
+              }
+
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+
+            .top_rolling_banner {
+              overflow: hidden;
+              position: relative;
+              background-color: #f0468c;
+              color: white;
+              padding: 20px 0;
+              text-align: center;
+              width: 100%;
+            }
+
+            .marq {
+              display: inline-block;
+              width: 200%;
+              white-space: nowrap;
+              animation: scrollLeft 22s linear infinite;
+            }
+          </style>
+          <div class="top_rolling_banner">
+            <div class="marq">
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+              <img src="/web/images/ccds/renew_rolling4.png" alt="휘트니스피플" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!--edibot_skin_data:{"width":1014,"mo_width":640}-->
-<div class="visual">
-  <div
-    app4you-smart-banner="smart-banner-admin-PC00001"
-    class="-xans-element- xans-smart-banner-admin xans-smart-banner-admin-PC00001"
-    data-banner-name="메인상단배너"
-  >
-    <div>
-      <a href="#none"
-        ><img
-          src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/img_main.jpg"
-      /></a>
+
+    <!--section1-->
+    <style>
+      /*이미지 */
+      #section_1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_1 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_1 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_1 > p > a {
+        color: #999;
+      }
+      #section_1 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      #section_1 .img_wrap {
+        display: block;
+        overflow: hidden;
+      }
+      #section_1 .img_wrap img {
+        width: 100%;
+      }
+      #section_1 .img_wrap:hover img {
+        transition: all 1.5s;
+        transform: scale(1.05);
+      }
+      #section_1 .board_8_txt {
+        margin-top: 20px;
+        padding: 0px 5px;
+        box-sizing: border-box;
+      }
+      #section_1 .board_8_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_1" module="Board_ListPackage_8">
+      <h3>real story</h3>
+      <p><a href="/board/리얼-스토리/8/">show more</a></p>
+      <div class="container" module="board_list_8">
+        <!--
+          $count = 6
+          $login_page_url = /member/login.html
+          $deny_access_url = /index.html
+          -->
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+  </div>
+        </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+            </div>
+        <div>
+          <a class="img_wrap" href="/board/gallery/read.html{$param_read}"
+            ><img src="{$img_src}" alt="인터뷰 이미지1"
+          /></a>
+          <div class="board_8_txt">
+            <span>{$subject}</span>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!--section2-->
+    <style>
+      /*이미지 */
+      #section_2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_2 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_2 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_2 > p > a {
+        color: #999;
+      }
+      #section_2 .container {
+        width: 1240px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      #section_2 .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      #section_2 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #section_2 .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      #section_2 .board_15_txt {
+        padding: 0px 5px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+      }
+      #section_2 .board_15_txt > span {
+        font-size: 20px;
+      }
+    </style>
+    <div id="section_2" module="Board_ListPackage_14">
+      <h3>interview</h3>
+      <p><a href="/board/before-after/14/">show more</a></p>
+
+      <div class="container" module="board_list_14">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!--
+                $count = 6
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+              -->
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 첫번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+  </div>
+        </div>
+            <div
+              class="swiper-slide"
+              onclick="javascript:window.location.href='/board/gallery/read.html{$param_read}'"
+            >
+              <!--슬라이더의 두번째 이미지 입니다.-->
+              <img src="{$img_src}" alt="" />
+              <div class="board_15_txt">
+                <span>{$subject}</span>
+      </div>
+        </div>
+          </div>
+            </div>
+          </div>
+        </div>
+    <!-- Initialize Swiper -->
+    <script>
+      var section_2_swiper = new Swiper("#section_2 .mySwiper", {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+        freeMode: true,
+      });
+    </script>
+
+    <!--section3-->
+    <style>
+      #section_3 {
+        width: 100%;
+        min-width: 1240px;
+        height: 737px;
+        margin-top: 150px;
+        overflow: hidden;
+      }
+      #section_3 .section_3_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("/web/images/ccds/renew_center_img2.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: all 1s;
+      }
+      #section_3:hover .section_3_wrap {
+        transform: scale(1.1);
+      }
+
+      #section_3 .section_3_wrap > * {
+        transition: all 1s;
+      }
+
+      #section_3:hover .section_3_wrap > * {
+        transform: scale(0.909);
+      }
+      #section_3 h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 50px;
+        color: #fff;
+      }
+      .section_3_btn {
+        width: 230px;
+        height: 60px;
+        background-color: #f0468c;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 24px;
+        margin-top: 300px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+    <div id="section_3">
+      <div class="section_3_wrap">
+        <h3>center</h3>
+        <div
+          class="section_3_btn"
+          onclick="javascript:window.location.href='/page/location.html'"
+        >
+          <span>go to link &gt;</span>
+      </div>
+</div>
+    </div>
+    <!--section4-->
+    <style>
+      /*이미지 */
+      #section_4 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_4 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 34px;
+        font-weight: 900;
+        color: #f0468c;
+      }
+      #section_4 > p {
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+      #section_4 > p > a {
+        color: #999;
+      }
+      #section_4 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      #section_4 .container > div {
+        position: relative;
+        cursor: pointer;
+      }
+      #section_4 .container > div > img {
+        width: 100%;
+        height: 100%;
+      }
+      #section_4 .section_4_btn {
+        width: 210px;
+        height: 60px;
+        background-color: #f0468c;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        margin-left: -105px;
+        border-radius: 20px;
+      }
+      #section_4 .section_4_btn > span {
+        color: #fff;
+        font-size: 24px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 60px;
+      }
+    </style>
+    <div id="section_4">
+      <h3>notice</h3>
+      <p><a href="/board/공지사항/1/">show more</a></p>
+      <div class="container">
+        <div
+          onclick="javascript:window.location.href='/board/무료체험권-신청/1002/'"
+        >
+          <img
+            src="/web/images/ccds/renew_notice_img_10.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>무료체험권신청</span></div>
+    </div>
+        <div onclick="javascript:window.location.href='/board/공지사항/1/'">
+          <img
+            src="/web/images/ccds/renew_notice_img_8.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>공지사항</span></div>
+  </div>
+        <div
+          onclick="javascript:window.location.href='/board/진행중인-이벤트/40/'"
+        >
+          <img
+            src="/web/images/ccds/renew_notice_img_11.png"
+            alt="인터뷰 이미지1"
+          />
+          <div class="section_4_btn"><span>이벤트</span></div>
     </div>
   </div>
 </div>
 
-<!--@import(/product/shoppQ/searchContent.html)-->
-
-<div module="product_listmain_1" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-        $basket_result = /product/add_basket.html
-        $basket_option = /product/basket_option.html
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
+    <!--section5 인스타그램-->
+    <style>
+      #section_5 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+      #section_5 > h3 {
+        font-family: "GmarketSansMedium";
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 80px;
+        color: #f0468c;
+      }
+      #section_5 > p {
+        margin-bottom: 40px;
+        font-size: 20px;
+      }
+      #section_5 > p > a {
+        color: #f0468c;
+      }
+      #section_5 .container {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 0 20px;
+      }
+      #section_5 .container > div {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      #section_5 .container > div > img {  
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+    </style>
+    <div id="section_5">
+      <h3>instagram</h3>
+      <p>
+        <a href="https://www.instagram.com/fitnesspeople_woman/"
+          >@fitnesspeople_woman</a
         >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
+      </p>
+      <div class="container">
+         <div onclick="javascript:window.location.href='https://www.instagram.com/p/DLULGbPTHT0/'">
+          <img src="/web/images/ccds/ins2507(2).png" alt="300x300" />
         </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
+         <div onclick="javascript:window.location.href='https://www.instagram.com/p/DMFF1EzzbMn/'">
+          <img src="/web/images/ccds/ins_2508.png" alt="300x300" />
+        </div>
+        <div onclick="javascript:window.location.href='https://www.instagram.com/p/DLULzFGTEUE/?img_index=1'">
+          <img src="/web/images/ccds/ins_sawa.png" alt="300x300" />
+        </div>
+        <div onclick="javascript:window.location.href='https://www.instagram.com/p/DLULsUQzi0l/?img_index=1'">
+          <img src="/web/images/ccds/ins_sawa(2).png" alt="300x300" />
+        </div>      
+        <div onclick="javascript:window.location.href='https://www.instagram.com/p/DKN9x_3Tphh/?img_index=1'">
+          <img src="/web/images/ccds/ins_fpa1_web.png" alt="300x300" />
         </div>
       </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_2" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_3" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_4" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_5" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_6" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div module="product_listmain_7" class="ec-base-product">
-  <!--
-        $count = 8
-            ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-            ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-    -->
-  <div class="title">
-    <h2>
-      <span style="display: {$category_title_text_display};"
-        >{$category_title_text}</span
-      >
-      <span style="display: {$category_title_img_display};"
-        ><img src="{$category_title_img}" alt="{$category_title_text}"
-      /></span>
-    </h2>
-  </div>
-  <ul class="prdList grid2">
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li id="anchorBoxId_{$product_no}">
-      <div class="thumbnail">
-        <div class="prdImg">
-          <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"
-            ><img
-              src="{$image_medium}"
-              id="{$image_medium_id}"
-              alt="{$seo_alt_tag}" /><span module="product_Imagestyle"
-              ><span
-                class="prdIcon {$icon_class_name}"
-                style="background-image: url('{$icon_url}')"
-              ></span></span
-          ></a>
-          <span class="wish">{$list_wish_icon}</span>
-        </div>
-        <div class="icon">
-          <div class="promotion">
-            {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon}
-            {$product_icons} {$today_arrival_icon} {$pickup_icon}
-            {$benefit_icons} {$rental_icon}
-          </div>
-          <div class="button">
-            <div class="likeButton {$disp_likeprd_class}">
-              <button type="button">
-                {$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong>
-              </button>
-            </div>
-            <div class="option">{$option_preview_icon}</div>
-            {$basket_icon} {$zoom_icon}
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <strong class="name"
-          ><a
-            href="{$link_product_detail}"
-            class="{$product_name_display|display}"
-            ><span class="title {$product_name_title_display|display}"
-              >{$product_name_title} :</span
-            >
-            {$product_name}</a
-          ></strong
-        >
-        <span class="name {$rental_icon|display}"
-          >월 {$rental_maximum_price|numberformat}원 /
-          {$rental_maximum_term}개월</span
-        >
-        <ul module="product_ListItem" class="spec">
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-          <li class="{$item_display|display}">
-            <strong class="title {$item_title_display|display}"
-              >{$item_title} :</strong
-            >
-            {$item_content}
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div id="boardArea">
-  <div module="board_listpackage_5">
-    <!--@css(/css/module/layout/board_listpackage_5.css)-->
-    <h2><span>자유게시판</span></h2>
-    <div class="ec-base-table typeList gLine">
-      <table border="1" summary="">
-        <caption>
-          자유 게시판
-        </caption>
-        <colgroup>
-          <col style="width: auto" />
-          <col style="width: 100px" />
-        </colgroup>
-        <thead class="blind">
-          <tr>
-            <th scope="col">제목</th>
-            <th scope="col">날짜</th>
-          </tr>
-        </thead>
-        <tbody module="board_list_5">
-          <!--
-                        $count = 5
-                        $main_list = yes
-                        $subject_cut = 25
-                        $main_list_reply_view = no
-                    -->
-          <tr class="{$block_target_class}" {$block_data_attr}>
-            <td class="title">
-              <a
-                href="{$link_board_detail}"
-                class="{$block_target_class}"
-                {$block_data_attr}
-                >{$subject}</a
-              >
-            </td>
-            <td>{$write_date}</td>
-          </tr>
-          <tr class="{$block_target_class}" {$block_data_attr}>
-            <td class="title">
-              <a
-                href="{$link_board_detail}"
-                class="{$block_target_class}"
-                {$block_data_attr}
-                >{$subject}</a
-              >
-            </td>
-            <td>{$write_date}</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-    <p class="more">
-      <a href="/board/free/list.html?board_no=5" class="btnNormal">더보기</a>
-    </p>
-  </div>
 
-  <div module="board_listpackage_6">
-    <!--@css(/css/module/layout/board_listpackage_6.css)-->
-    <h2><span>상품 Q&amp;A</span></h2>
-    <div class="ec-base-table typeList gLine">
-      <table border="1" summary="">
-        <caption>
-          상품 Q&amp;A
-        </caption>
-        <colgroup>
-          <col style="width: auto" />
-          <col style="width: 100px" />
-        </colgroup>
-        <thead class="blind">
-          <tr>
-            <th scope="col">제목</th>
-            <th scope="col">날짜</th>
-          </tr>
-        </thead>
-        <tbody module="board_list_6">
-          <!--
-                        $count = 5
-                        $main_list = yes
-                        $subject_cut = 25
-                        $main_list_reply_view = no
-                    -->
-          <tr class="{$block_target_class}" {$block_data_attr}>
-            <td class="title">
-              <a
-                href="{$link_board_detail}"
-                class="{$block_target_class}"
-                {$block_data_attr}
-                >{$subject}</a
-              >
-            </td>
-            <td>{$write_date}</td>
-          </tr>
-          <tr class="{$block_target_class}" {$block_data_attr}>
-            <td class="title">
-              <a
-                href="{$link_board_detail}"
-                class="{$block_target_class}"
-                {$block_data_attr}
-                >{$subject}</a
-              >
-            </td>
-            <td>{$write_date}</td>
-          </tr>
-        </tbody>
-      </table>
+    <!--퀵 탑-->
+    <style>
+      .quick_btn {
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        bottom: 50px;
+        right: 50px;
+        z-index: 9999;
+        cursor: pointer;
+        font-size: 150px;
+        transform: rotate(0deg);
+        transform-origin: center center;
+      }
+      .quick_btn img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+    <div class="quick_btn">
+      <img src="/web/images/ccds/topImg2.png" alt="go to top" />
     </div>
-    <p class="more">
-      <a href="/board/product/list.html?board_no=6" class="btnNormal">더보기</a>
-    </p>
-  </div>
-</div>
+    <script>
+      $(function () {
+        $(".quick_btn").click(function () {
+          $("html, body").stop().animate(
+            {
+              scrollTop: 0,
+            },
+            300,
+            "linear"
+          );
+          $(this).css({
+            transition: "transform 0.3s linear",
+            transform: "rotate(" + 0 + "deg)",
+          });
+        });
+      });
+    </script>
 
-<!--@define(cmc_log)-->
+    <!--푸터-->
+    <style>
+      #footer {
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 408px;
+      }
+      #footer .left {
+        width: 515px;
+      }
+      #footer .right {
+        width: 367px;
+      }
+      .bottom_copyright {
+        margin-top: 100px;
+      }
+      .bottom_copyright span {
+        font-size: 16px;
+      }
+      .bottom_copyright span:nth-child(1) {
+        margin-bottom: 6px;
+      }
+      .right .right-top {
+        margin-bottom: 24px;
+      }
+      .right .right-top span {
+        display: block;
+        font-weight: bold;
+      }
+      .right .right-top span:nth-child(1) {
+        font-size: 24px;
+      }
+      .right .right-top span:nth-child(2) {
+        font-size: 36px;
+      }
+      .right .right-mid {
+        font-weight: bold;
+      }
+      .right .right-mid span {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+    </style>
+    <div id="footer">
+      <div class="left">
+        <div><img src="/web/images/ccds/renew_logo_black2.png" alt="로고" /></div>
+        <div class="bottom_copyright">
+          <span>휘트니스피플 우먼<br>753-87-02030<br>copyright &copy; fitness people all right reserved.</span><br />
+          <span
+            ><a href="/member/agreement.html">이용약관</a> |
+            <a href="/member/privacy.html">개인정보처리방침</a> |
+            <a href="/shopinfo/company.html">사업자정보확인</a></span
+          >
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-top">
+          <span>customer service</span><span><br><br></span>
+        </div>
+        <div class="right-mid">
+          <span>mon-fri : 06am ~ 11pm</span>
+          <span>sat,sun,holiday : 10am ~ 08pm</span>
+          <span>contact : <email>psi@fitnesspeople.co.kr</email></span>
+        </div>
+      </div>
+    </div>
+
+    <div module="Layout_conversionPc">
+      <link rel="stylesheet" href="./css/module/layout/conversionpc.css">
+      <a href="{$mobile_url}">모바일 화면보기</a>
+    </div>
+    <!-- Smartlog -->
+    <script type="text/javascript">
+      var hpt_info = { _account: "UHPT-26871", _server: "a27" };
+    </script>
+    <script
+      language="javascript"
+      src="//cdn.smlog.co.kr/core/smart.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
